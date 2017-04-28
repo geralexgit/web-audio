@@ -1,4 +1,5 @@
 var audioContext = new AudioContext(); //___Initializes web audio api
+
 function playOsc(oscType, freq) {
     var osc = audioContext.createOscillator();
     osc.type = oscType;
