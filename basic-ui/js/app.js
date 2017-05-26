@@ -1,6 +1,7 @@
 "use strict";
 var audioContext = new AudioContext();
 window.onload = function () {
+
     var onOff = document.getElementById("on-off");
     var span = document.getElementsByTagName("span")[0];
     var osc = false;
@@ -21,6 +22,7 @@ window.onload = function () {
     for (var i = 0; i < waveformTypes.length; i++) {
         waveformTypes[i].addEventListener('click', select);
     }
+
     setInterval(function () {
         if (!osc) {
             console.log("Oscillator is stopped. Waiting for oscillator to start");
@@ -32,6 +34,7 @@ window.onload = function () {
             osc.type = selectedWaveform;
         }
     }, 50);
+
     onOff.addEventListener("click", function () {
         if (!osc) {
             osc = audioContext.createOscillator();
@@ -48,4 +51,5 @@ window.onload = function () {
             span.innerHTML = "Click to start oscillator";
         }
     });
+
 };
